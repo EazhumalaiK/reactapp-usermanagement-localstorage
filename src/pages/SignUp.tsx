@@ -20,7 +20,14 @@ const SignUp = () => {
     setSignupForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
-  //   ------------------------------- handle fullname---
+  //   ------------------------------- handle submit---
+
+  const handleSubmit = () => {
+    localStorage.setItem(signupform.username, JSON.stringify(signupform));
+    console.log("saved successfully");
+  };
+
+  //   ------------------------
 
   return (
     <div>
@@ -82,7 +89,10 @@ const SignUp = () => {
               placeholder="ConfirmPassword"
               onChange={handleChange}
             />
-            <button className="p-4 border border-solid text-white hover:bg-slate-300 hover:text-slate-600 hover:text-l hover: font-bold">
+            <button
+              className="p-4 border border-solid text-white hover:bg-slate-300 hover:text-slate-600 hover:text-l hover: font-bold"
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>

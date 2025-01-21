@@ -1,7 +1,11 @@
 import React from "react";
 
-const Home = () => {
-  return <div>Home</div>;
+interface HomeProps {
+  name: string;
+}
+
+const Home = (Name: HomeProps) => {
+  return <div>Welcome {Name.name}</div>;
 };
 
 export default Home;
