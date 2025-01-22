@@ -12,7 +12,8 @@ const Login = () => {
     password: "",
   });
 
-  const [loggedIn, setLoggedIn] = useState<boolean>(true);
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const [InValidCred, setInValidCred] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -43,6 +44,8 @@ const Login = () => {
 
         if (password === userInput.password) {
           setLoggedIn(true);
+        } else {
+          setInValidCred(true);
         }
       } else {
         console.log(userInput);
@@ -99,6 +102,12 @@ const Login = () => {
               {!IsValid && userInput.password.trim().length === 0 ? (
                 <div className="text-red-800 font-semibold">
                   Please enter password
+                </div>
+              ) : null}
+
+              {InValidCred ? (
+                <div className="text-red-800 font-semibold">
+                  Invalid username or password
                 </div>
               ) : null}
 
