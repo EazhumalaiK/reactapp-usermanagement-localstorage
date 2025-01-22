@@ -115,12 +115,12 @@ const Login = () => {
                 className="p-4 border border-solid text-white hover:bg-slate-300 hover:text-slate-600 hover:text-l hover: font-bold"
                 onClick={handleClick}
               >
-                Login
+                Submit
               </button>
               <h3 className="text-white mx-16 my-4">
                 Don't have an account?
                 <span
-                  className="font-bold hover:underline"
+                  className="font-bold hover:underline cursor-pointer"
                   onClick={navigateTo}
                 >
                   Register

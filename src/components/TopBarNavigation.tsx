@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Signout from "../pages/Signout";
 import { Link, Route, Routes } from "react-router-dom";
 import SignUp from "../pages/SignUp";
+import MyCart from "../pages/MyCart";
 
 const TopBarNavigation = () => {
   return (
@@ -22,12 +23,15 @@ const TopBarNavigation = () => {
             <Link to="/about" className="navitem">
               About
             </Link>
+            <Link to="/mycart" className="navitem">
+              MyCart
+            </Link>
             <Link to="/login" className="navitem">
               Login
             </Link>
-            <Link to="/signout" className="navitem">
-              Signout
-            </Link>
+            {/* <Link to="/signout" className="navitem">
+              Logout
+            </Link> */}
           </div>
         </nav>
       </div>
@@ -39,6 +43,7 @@ const TopBarNavigation = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signout" element={<Signout />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/mycart" element={<MyCart />} />
       </Routes>
     </div>
   );
